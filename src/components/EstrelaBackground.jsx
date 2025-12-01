@@ -8,6 +8,14 @@ export const EstrelaBackground = () => {
     useEffect(() => {
         gerarEstrelas();
         gerarMeteoro();
+
+        const ajustarTamanho = () => {
+            gerarEstrelas();
+        };
+
+        window.addEventListener('resize', ajustarTamanho)
+
+        return () => window.removeEventListener("resize", ajustarTamanho);
     }, []);
 
     const gerarEstrelas = () => {
@@ -71,8 +79,8 @@ export const EstrelaBackground = () => {
                     key={meteoro.id} 
                     className="meteor animate-meteor" 
                     style={{
-                        width: `${meteoro.tamanho}px`,
-                        height: `${meteoro.tamanho}px`,
+                        width: meteoro.tamanho * 50 + "px",
+                        height: meteoro.tamanho * 3 + "px",
                         left: `${meteoro.x}%`,
                         top: `${meteoro.y}%`,
                         animationDelay: meteoro.delay,

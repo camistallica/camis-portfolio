@@ -1,3 +1,4 @@
+import { Navbar } from "../components/Navbar"
 import { ThemeToggle } from "../components/ThemeToggle"
 import { EstrelaBackground } from "@/components/EstrelaBackground"
 
@@ -8,7 +9,7 @@ export const Home = () => {
         {/* animações*/}
             <EstrelaBackground/>
         {/* navbar*/}
-
+            <Navbar/>
         {/* principal*/}
 
         {/* footer*/}
